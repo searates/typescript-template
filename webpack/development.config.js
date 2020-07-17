@@ -14,7 +14,7 @@ module.exports = function({ paths }) {
       path: path.resolve(__dirname, `../${paths.js}`),
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.css', '.scss', '.json']
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.json']
     },
     devtool: 'inline-source-map',
     // fix build listeners for windows and WSL
@@ -37,13 +37,20 @@ module.exports = function({ paths }) {
     ],
     module: {
       rules: [
-        // for ES
+        // for typescript
         {
-          test: /\.(js|jsx)$/,
+          test: /\.ts(x?)$/,
           exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader'
-          }
+          use: [
+            {
+              loader: 'ts-loader'
+            }
+          ]
+        },
+        // for javascript
+        {
+          test: /\.js$/,
+          loader: 'source-map-loader'
         },
         // for sass modules
         {
