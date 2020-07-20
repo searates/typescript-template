@@ -4,7 +4,7 @@
 - `npm run dev` - run webpack development build with watching (in-project integration)
 - `npm run build` - run webpack production build for deploy
 - `npm run remove-redux` - remove redux library and source files from project
-- `npm run prettier:fix` - fix all js and jsx files using .prettierrc rules of code style
+- `npm run prettier:fix` - fix all ts and tsx files using .prettierrc rules of code style
 
 #### Template Structure
 
@@ -15,8 +15,8 @@
   * **pages** - directory for app pages (not a reusable components, root components - pages of app)
   * **redux** - directory for all redux logic such as: actions, reducers and etc.
   * **utils** - directory for util functional (support functions for app)
-  **App.jsx** - main app component
-  **index.js** - entry point in app
+  **App.tsx** - main app component
+  **index.ts** - entry point in app
 * **webpack** - webpack config directory (build config for app... dependence on running environment)
 
 #### Remove Redux from template
